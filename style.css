@@ -1,0 +1,475 @@
+/* Reset CSS Dasar & Font Global */
+:root {
+    --primary-color: #5D3BEE;
+    --primary-color-darker: #4a2fbc;
+    --text-color-dark: #212529;
+    --text-color-medium: #4A4A4A;
+    --text-color-light: #6c757d;
+    --bg-light: #f8f9fa;
+    --bg-white: #FFFFFF;
+    --border-color: #dee2e6;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Lato', sans-serif;
+    --shadow-soft: 0 4px 15px rgba(0,0,0,0.06);
+    --shadow-medium: 0 8px 25px rgba(0,0,0,0.1);
+    --border-radius-normal: 8px;
+    --border-radius-large: 12px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-secondary);
+    line-height: 1.75;
+    color: var(--text-color-medium);
+    background-color: var(--bg-white);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigasi */
+header {
+    background-color: var(--bg-white);
+    padding: 1rem 0;
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo .logo-image {
+    height: 55px;
+    width: auto;
+    vertical-align: middle;
+}
+
+header ul#main-nav-menu { /* ID ditambahkan untuk targeting JS dan menu mobile */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Default untuk desktop */
+}
+
+header ul#main-nav-menu li {
+    margin-left: 30px;
+}
+
+header ul#main-nav-menu li a {
+    text-decoration: none;
+    color: var(--text-color-medium);
+    font-weight: 500;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: color 0.25s ease-in-out;
+}
+
+header ul#main-nav-menu li a:hover,
+header ul#main-nav-menu li a.active {
+    color: var(--primary-color);
+}
+
+/*--------------------------------------------------------------
+# Hamburger Menu Styles
+--------------------------------------------------------------*/
+.hamburger-menu {
+    display: none; /* Sembunyikan di desktop secara default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* Area klik yang cukup */
+    z-index: 1010; /* Di atas menu itu sendiri jika menu menggunakan z-index lebih rendah */
+    margin-left: auto; /* Jika ada item lain di nav, ini akan mendorong hamburger ke kanan */
+}
+
+.hamburger-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color-dark);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animasi Hamburger menjadi X */
+.hamburger-menu.is-active .hamburger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.is-active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.is-active .hamburger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Main Content Wrapper */
+main {
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to bottom, var(--bg-light) 70%, var(--bg-white) 100%);
+    color: var(--text-color-dark);
+    text-align: center;
+    padding: 120px 0 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    font-family: var(--font-primary);
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    color: var(--primary-color);
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+}
+
+.hero-section .tagline {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    color: var(--text-color-light);
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    padding: 16px 40px;
+    text-decoration: none;
+    border-radius: var(--border-radius-normal);
+    font-weight: bold;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease-in-out, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: 0 5px 15px rgba(93, 59, 238, 0.25);
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color-darker);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(93, 59, 238, 0.3);
+}
+
+/* Section Umum */
+.section-padding {
+    padding: 90px 0;
+}
+
+.section-padding h2 {
+    text-align: center;
+    font-family: var(--font-primary);
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: var(--text-color-dark);
+    letter-spacing: -1px;
+    line-height: 1.3;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.bg-dark {
+    background-color: var(--text-color-dark);
+    color: var(--bg-light);
+}
+.bg-dark h2, .bg-dark p {
+    color: var(--bg-light);
+}
+
+/* Layanan Section */
+.layanan-content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+.layanan-content p {
+    font-size: 1.1rem;
+    color: var(--text-color-medium);
+    margin-bottom: 1.5rem;
+}
+.layanan-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Fitur Grid */
+.fitur-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+}
+
+.fitur-item {
+    padding: 30px 25px;
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-normal);
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.fitur-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.fitur-icon { /* Untuk emoji atau ikon SVG/gambar */
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+/* Jika menggunakan Font Awesome:
+.fitur-item i.fas, .fitur-item i.fab {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+*/
+
+.fitur-item h4 {
+    font-family: var(--font-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-color-dark);
+}
+
+.fitur-item p {
+    color: var(--text-color-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Kontak Section */
+#kontak {
+    text-align: center;
+}
+#kontak .container > p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.kontak-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-button-outline {
+    background-color: transparent;
+    color: var(--bg-white); /* Warna default untuk .bg-dark */
+    padding: 14px 35px;
+    text-decoration: none;
+    border-radius: var(--border-radius-normal);
+    font-weight: bold;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    border: 2px solid var(--bg-white); /* Warna default untuk .bg-dark */
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cta-button-outline:hover {
+    background-color: var(--bg-white); /* Warna default untuk .bg-dark */
+    color: var(--text-color-dark);   /* Warna default untuk .bg-dark */
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: #222222;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+footer p { margin: 0; }
+
+/* Footer Social Links (Contoh jika diaktifkan di HTML) */
+.social-links {
+    margin-top: 15px;
+}
+.social-links a {
+    color: #a0a0a0;
+    margin: 0 12px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/*--------------------------------------------------------------
+# Responsive Styles
+--------------------------------------------------------------*/
+@media (max-width: 992px) { /* Tablet Lanskap dan di bawahnya */
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section .tagline {
+        font-size: 1.2rem;
+    }
+    .section-padding h2 {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 768px) { /* Tablet Potret dan di bawahnya - Implementasi Hamburger */
+    header nav {
+        /* justify-content: space-between; sudah ada di style global, aman */
+        position: relative; /* Untuk positioning menu dropdown */
+    }
+
+    header .logo {
+        margin-bottom: 0; /* Agar sejajar dengan hamburger */
+    }
+
+    .hamburger-menu {
+        display: block; /* Tampilkan tombol hamburger */
+    }
+
+    header ul#main-nav-menu {
+        display: none; /* Sembunyikan menu desktop */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Muncul tepat di bawah header */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        border-top: 1px solid var(--border-color);
+        align-items: center;
+        z-index: 999; /* Pastikan di bawah header jika header punya z-index lebih tinggi */
+    }
+
+    header ul#main-nav-menu.menu-open {
+        display: flex; /* Tampilkan menu saat class 'menu-open' ditambahkan */
+    }
+
+    header ul#main-nav-menu li {
+        margin: 15px 0;
+        margin-left: 0; /* Reset margin kiri dari desktop */
+        width: 100%;
+        text-align: center;
+    }
+
+    header ul#main-nav-menu li a {
+        padding: 10px 20px;
+        display: block;
+        width: calc(100% - 40px); /* Memberi padding internal pada link */
+        box-sizing: border-box; /* Agar padding tidak menambah total width */
+    }
+    header ul#main-nav-menu li a:hover {
+        background-color: var(--bg-light); /* Efek hover pada item menu mobile */
+        color: var(--primary-color);
+    }
+
+    /* Penyesuaian Umum Lainnya untuk Mobile */
+    .hero-section {
+        padding: 100px 0 100px;
+    }
+    .hero-section h1 {
+        font-size: 2.4rem;
+    }
+    .hero-section .tagline {
+        font-size: 1.1rem;
+        padding: 0 15px; /* Agar tidak terlalu mepet sisi */
+    }
+    .section-padding h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Satu kolom */
+        gap: 30px;
+    }
+    .portfolio-item img {
+        height: 220px;
+    }
+
+    .fitur-grid {
+        grid-template-columns: 1fr; /* Satu kolom */
+        gap: 25px;
+    }
+    .fitur-item { padding: 25px; }
+
+    .cta-button, .cta-button-outline {
+        padding: 14px 30px;
+        font-size: 0.9rem;
+    }
+    .kontak-buttons {
+        flex-direction: column; /* Tombol kontak jadi vertikal */
+        align-items: center; /* Pusatkan tombol */
+        width: 100%; /* Ambil lebar penuh untuk container tombol */
+    }
+    .kontak-buttons .cta-button-outline {
+      width: 80%; /* Lebar tombol di mobile */
+      max-width: 300px; /* Batas maksimal lebar tombol */
+      justify-content: center; /* Pusatkan teks di tombol */
+    }
+
+    header .logo .logo-image {
+        height: 50px; /* Sesuaikan ukuran logo untuk mobile jika perlu */
+    }
+}
+
+@media (max-width: 480px) { /* Layar Mobile Sangat Kecil */
+    .container {
+        width: 95%; /* Lebih banyak ruang di layar sangat kecil */
+        padding: 0 15px;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section .tagline {
+        font-size: 1rem;
+    }
+    .section-padding h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-button,
+    .kontak-buttons .cta-button-outline { /* Pastikan kedua tombol utama di-target */
+        width: 90%; /* Tombol mengambil lebar lebih banyak */
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box; /* Penting agar padding tidak menambah width */
+        text-align: center;
+    }
+    .kontak-buttons .cta-button-outline {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luvena Invitation menyediakan layanan undangan pernikahan digital dengan desain elegan, modern, dan personal untuk momen spesial Anda.">
+    <link rel="icon" href="/wedding-saefal-fatma/assets/images/favicon.png" type="image/png">
+
+    <title>Luvena Invitation - Undangan Pernikahan Digital Elegan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <img
+                    class="logo-image"
+                    src="/wedding-saefal-fatma/assets/images/icon-192x192.png" alt="Logo Luvena Invitation">
+            </a>
+            <button class="hamburger-menu" id="hamburger-toggle" aria-label="Toggle navigasi" aria-expanded="false">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <ul id="main-nav-menu"> {/* Tambahkan ID di sini */}
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#fitur">Fitur</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>Wujudkan Undangan Digital Impian Anda</h1>
+                <p class="tagline">Desain elegan, modern, dan personal untuk momen tak terlupakan bersama Luvena Invitation.</p>
+                <a href="#portfolio" class="cta-button">Lihat Desain Kami</a>
+            </div>
+        </section>
+
+        <section id="layanan" class="section-padding">
+            <div class="container">
+                <h2>Apa itu Luvena Invitation?</h2>
+                <div class="layanan-content">
+                    <p>Luvena Invitation adalah layanan pembuatan undangan pernikahan digital yang membantu Anda berbagi kabar bahagia dengan cara yang lebih modern, praktis, dan berkesan. Kami percaya setiap pasangan memiliki cerita unik, dan undangan Anda harus mencerminkannya.</p>
+                    <p>Kami menawarkan berbagai pilihan desain template menawan yang dapat disesuaikan, serta layanan desain kustom untuk mewujudkan visi undangan impian Anda sepenuhnya. Buat tamu Anda terkesan sejak pandangan pertama!</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="fitur" class="section-padding">
+            <div class="container">
+                <h2>Mengapa Memilih Luvena Invitation?</h2>
+                <div class="fitur-grid">
+                    <div class="fitur-item">
+                        <div class="fitur-icon">🎨</div>
+                        <h4>Desain Unik & Personal</h4>
+                        <p>Setiap undangan dirancang eksklusif dengan sentuhan personal sesuai keinginan Anda.</p>
+                    </div>
+                    <div class="fitur-item">
+                        <div class="fitur-icon">📱</div>
+                        <h4>Responsif & Mobile-Friendly</h4>
+                        <p>Tampilan sempurna di semua perangkat, dari desktop hingga smartphone Anda.</p>
+                    </div>
+                    <div class="fitur-item">
+                        <div class="fitur-icon">✨</div>
+                        <h4>Fitur Lengkap & Modern</h4>
+                        <p>RSVP online, galeri foto, peta interaktif, cerita cinta, dan banyak lagi.</p>
+                    </div>
+                    <div class="fitur-item">
+                        <div class="fitur-icon">🚀</div>
+                        <h4>Proses Mudah & Cepat</h4>
+                        <p>Kami memandu Anda melalui setiap langkah dengan layanan yang ramah dan responsif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontak" class="section-padding bg-dark text-light">
+            <div class="container">
+                <h2>Tertarik Membuat Undangan Bersama Kami?</h2>
+                <p>Jangan ragu untuk menghubungi kami untuk konsultasi gratis atau memulai pemesanan. Kami siap membantu mewujudkan undangan pernikahan impian Anda menjadi kenyataan!</p>
+                <div class="kontak-buttons">
+                    <a href="mailto:emailanda@example.com?subject=Pemesanan Undangan dari Luvena Invitation" class="cta-button-outline">
+                        Hubungi via Email
+                    </a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Luvena%20Invitation,%20saya%20tertarik%20untuk%20membuat%20undangan%20digital." target="_blank" class="cta-button-outline">
+                        Hubungi via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="tahun"></span> Luvena Invitation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script sederhana untuk menampilkan tahun copyright secara dinamis
+        document.getElementById('tahun').textContent = new Date().getFullYear();
+
+        // Script untuk Hamburger Menu
+        const hamburgerToggle = document.getElementById('hamburger-toggle');
+        const mainNavMenu = document.getElementById('main-nav-menu');
+
+        if (hamburgerToggle && mainNavMenu) {
+            hamburgerToggle.addEventListener('click', function() {
+                mainNavMenu.classList.toggle('menu-open');
+                hamburgerToggle.classList.toggle('is-active');
+                // Update aria-expanded attribute
+                const isExpanded = hamburgerToggle.getAttribute('aria-expanded') === 'true' || false;
+                hamburgerToggle.setAttribute('aria-expanded', !isExpanded);
+            });
+
+            // Opsional: Tutup menu saat item menu diklik (untuk Single Page Application)
+            const navLinks = mainNavMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mainNavMenu.classList.contains('menu-open')) {
+                        mainNavMenu.classList.remove('menu-open');
+                        hamburgerToggle.classList.remove('is-active');
+                        hamburgerToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
