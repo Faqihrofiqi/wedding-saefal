@@ -102,3 +102,32 @@ html[data-bs-theme="dark"] .bg-white-black {
 .no-gap-bottom {
     margin-bottom: -0.75rem !important;
 }
+
+@keyframes floatCloud {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100vw);
+    }
+}
+
+html[data-bs-theme="light"] section#home {
+    background-color: rgba(var(--bs-light-rgb), 0.75) !important; /* Warna terang tema Anda, tapi dengan opacity 75% */
+}
+
+html[data-bs-theme="dark"] section#home {
+    background-color: rgba(var(--bs-dark-rgb), 0.65) !important; /* Warna gelap tema Anda, tapi dengan opacity 65% */
+                                                                /* Anda bisa sesuaikan nilai opacity (0.0 - 1.0) ini */
+}
+
+/* Menyesuaikan SVG Wave Separator */
+.color-theme-svg {
+    background-color: transparent !important; /* Membuat background elemen SVG itu sendiri menjadi transparan */
+}
+
+section#bride {
+    position: relative;
+    z-index: 1; /* Mungkin diperlukan jika ada masalah tumpukan (stacking)
+    /* Pastikan background-color: transparent !important; jika ingin background <main> terlihat */
+}

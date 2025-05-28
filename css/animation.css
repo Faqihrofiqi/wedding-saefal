@@ -58,3 +58,20 @@
 .slide-desktop-active {
     transform: scale(1.15);
 }
+
+@keyframes fadeInFlower {
+  from {
+    opacity: 0;
+    /* Mulai dari sedikit kecil dan sedikit bergeser keluar dari posisi akhir.
+       Anda bisa bereksperimen dengan nilai transform ini.
+       Contoh: scale(0.8) membuatnya 80% dari ukuran asli.
+               translate(-5px, -5px) menggesernya sedikit ke kiri atas.
+               Efek ini akan membuat seolah-olah bunga "tumbuh" ke posisinya.
+    */
+    transform: scale(0.9) /*translate(-5px, -5px)*/; /* Saya sederhanakan sedikit, hanya scale */
+  }
+  to {
+    opacity: 0.7; /* Atur opacity akhir yang Anda inginkan (misal 0.5, 0.7, atau 1) */
+    transform: scale(1); /* Kembali ke ukuran normal */
+  }
+}
